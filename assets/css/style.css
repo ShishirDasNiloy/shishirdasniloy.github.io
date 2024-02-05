@@ -1,3 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,900&display=swap");
+
+:root {
+  /* Fonts */
+  --ff-railway: "Raleway", sans-serif;
+
+  /* Colors */
+  --white: hsl(0, 0%, 100%);
+  --white-smoke: hsl(0, 0%, 96%);
+  --gray-platinum: hsl(0, 0%, 88%);
+  --gray-platinum-70: hwb(0 88% 12% / 0.7);
+  --gray-slate: hsl(218, 17%, 52%);
+  --gray-slate-40: hsla(218, 17%, 52%, 0.4);
+  --blue-space-cadet: hsl(235, 21%, 21%);
+  --black-raisin: hsl(235, 21%, 12%);
+  --purple-electric: hsl(274, 100%, 64%);
+  --violet-electric: hsl(274, 100%, 52%);
+  --red-crayola: hsl(342, 100%, 48%);
+  --green: hsl(120, 100%, 52%);
+
+  /* Gradients */
+  --gradient-1: linear-gradient(
+    to bottom left,
+    hsl(274, 100%, 64%) 0%,
+    hsl(235, 21%, 12%, 0.5) 50%
+  );
+
+  /* Shadow */
+  --shadow-1: -5px 5px 25px hsla(235, 21%, 60%, 0.25);
+  --shadow-2: -2px 2px 5px hsla(274, 100%, 50%, 0.25);
+
+  /* Transitions */
+  --transition-1: 0.25s ease;
+  --transition-2: 0.5s ease-in-out;
+}
 *,
 *::before,
 *::after {
