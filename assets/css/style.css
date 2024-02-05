@@ -81,3 +81,31 @@ body {
   background: var(--gray-slate-40);
   margin: 16px 0;
 }
+
+/* Icon box sidebar */
+
+.icon-box {
+  position: relative;
+  background: var(--gradient-1);
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: var(--violet-electric);
+  box-shadow: var(--shadow-2);
+  z-index: 1;
+}
+
+.icon-box::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--blue-space-cadet);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* Icon box sidebar */
