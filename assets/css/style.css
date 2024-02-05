@@ -40,3 +40,44 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img,
+ion-icon,
+a,
+button,
+time,
+span {
+  display: block;
+}
+
+html {
+  font-family: var(--ff-railway);
+}
+
+body {
+  background: var(--black-raisin);
+}
+
+.sidebar {
+  background: var(--blue-space-cadet);
+  border: 1px solid var(--gray-slate-40);
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: var(--shadow-1);
+  z-index: 1;
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background: var(--gray-slate-40);
+  margin: 16px 0;
+}
