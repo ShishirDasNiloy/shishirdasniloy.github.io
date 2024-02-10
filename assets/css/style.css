@@ -16,7 +16,7 @@
   /* --purple-electric: hsl(274, 100%, 64%); */
   --violet-electric: hsl(274, 100%, 52%);
   --red-crayola: hsl(342, 100%, 48%);
-  --green: hsl(120, 100%, 52%);
+  --green-malachite: hsl(144, 100%, 60%);
 
   /* Gradients */
   --gradient-1: linear-gradient(
@@ -44,9 +44,23 @@
     hsl(235, 21%, 12%, 0.5) 50%
   );
 
+  --gradient-5: linear-gradient(
+    to bottom right,
+    hsl(144, 82%, 47%) 0%,
+    hsl(136, 75%, 16%) 50%
+  );
+
+  --gradient-6: linear-gradient(
+      135deg,
+      hsla(144, 82%, 47%, 0.25) 0%,
+      hsla(144, 82%, 47%, 0) 60%
+    ),
+    hsl(235, 21%, 21%);
+
   /* Shadow */
   --shadow-1: -4px 8px 10px hsla(235, 21%, 60%, 0.15);
   --shadow-2: -2px 2px 5px hsla(274, 100%, 50%, 0.25);
+  --shadow-3: -2px -8px 10px hsla(235, 21%, 60%, 0.15);
 
   /* Transitions */
   --transition-1: 0.25s ease;
@@ -77,6 +91,22 @@ span {
   display: block;
 }
 
+button {
+  font: inherit;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  background: none;
+  font: inherit;
+}
+
 html {
   font-family: var(--ff-railway);
 }
@@ -85,7 +115,8 @@ body {
   background: var(--black-raisin);
 }
 
-.sidebar {
+.sidebar,
+article {
   background: var(--blue-space-cadet);
   border: 1px solid var(--gray-slate-40);
   border-radius: 20px;
@@ -287,8 +318,175 @@ main {
   color: var(--violet-electric);
 }
 
+/* Main contents */
+article {
+  display: none;
+  transition: var(--transition-2);
+}
+
+article.active {
+  display: block;
+  animation: fade 0.5s ease backwards;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+h2,
+h3 {
+  color: var(--white-smoke);
+  text-transform: capitalize;
+}
+
+/* NAvbar */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--blue-space-cadet);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--gray-slate-40);
+  border-radius: 12px 12px 0 0;
+  box-shadow: var(--shadow-3);
+  z-index: 5;
+}
+
+.navbar-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.navbar-link {
+  color: var(--gray-platinum);
+  font-size: 18px;
+  padding: 20px 7px;
+  transition: color var(--transition-1);
+}
+
+.navbar-link:hover,
+.navbar-link:focus {
+  color: var(--gray-platinum-70);
+}
+
+.navbar-link.active {
+  color: var(--green-malachite);
+}
+
+.contact-form {
+  margin-bottom: 10px;
+}
+
+.form-title {
+  margin: 20px 0px;
+}
+
+.input-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.form-input {
+  color: var(--white-smoke);
+  font-size: 14px;
+  font-weight: 400;
+  padding: 15px 20px;
+  border: 1px solid var(--gray-platinum-70);
+  border-radius: 10px;
+  outline: none;
+}
+
+.form-input::placeholder {
+  font-weight: 500;
+}
+
+.form-input:focus {
+  border-color: var(--green-malachite);
+}
+
+textarea.form-input {
+  min-height: 100px;
+  height: 120px;
+  max-height: 300px;
+  resize: vertical;
+  margin-bottom: 25px;
+}
+
+textarea.form-input:-webkit-resizer {
+  display: none;
+}
+
+.form-input:focus:invalid {
+  border-color: var(--red-crayola);
+}
+
+.form-btn {
+  position: relative;
+  width: 100%;
+  background: var(--gradient-4);
+  color: var(--green-malachite);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border-radius: 14px;
+  font-size: 14px;
+  text-transform: capitalize;
+  z-index: 1;
+  transition: var(--transition-1);
+}
+
+.form-btn::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--blue-space-cadet);
+  border-radius: inherit;
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+.form-btn ion-icon {
+  font-size: 16px;
+}
+
+.form-btn:hover {
+  background: var(--gradient-5);
+}
+
+.form-btn:hover::before {
+  background: var(--gradient-6);
+}
+
+.form-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.form-btn:disabled:hover {
+  background: var(--gradient-4);
+}
+
+.form-btn:disabled:hover::before {
+  background: var(--blue-space-cadet);
+}
+
 @media (min-width: 580px) {
-  .sidebar {
+  .sidebar,
+  article {
     width: 520px;
     margin-inline: auto;
     padding: 30px;
@@ -353,10 +551,45 @@ main {
     max-width: calc(100% - 65px);
     width: calc(100% - 65px);
   }
+
+  .navbar {
+    border-radius: 20px 20px 0 0;
+  }
+
+  .navbar-list {
+    gap: 20px;
+  }
+
+  .navbar-link {
+    font-size: 14px;
+  }
+
+  .input-wrapper {
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .form-input {
+    padding: 15px 20px;
+  }
+
+  textarea.form-input {
+    margin-bottom: 30px;
+  }
+
+  .form-btn {
+    font-size: 16px;
+    padding: 16px 20px;
+  }
+
+  .form-btn ion-icon {
+    font-size: 18px;
+  }
 }
 
 @media (min-width: 768px) {
-  .sidebar {
+  .sidebar,
+  article {
     width: 700px;
   }
 
@@ -364,10 +597,23 @@ main {
     grid-template-columns: 1fr 1fr;
     gap: 30px 15px;
   }
+  .navbar-link {
+    font-size: 16px;
+  }
+
+  .input-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-btn {
+    width: max-content;
+    margin-left: auto;
+  }
 }
 
 @media (min-width: 1024px) {
-  .sidebar {
+  .sidebar,
+  article {
     width: 950px;
   }
 
@@ -380,11 +626,37 @@ main {
     width: max-content;
     margin: auto;
   }
+
+  .navbar {
+    position: absolute;
+    bottom: auto;
+    top: 0;
+    left: auto;
+    right: 0;
+    width: max-content;
+    border-radius: 0 20px;
+    padding: 0 20px;
+    box-shadow: none;
+  }
+
+  .navbar-list {
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .navbar-link {
+    font-weight: 500;
+  }
 }
 
 @media (min-width: 1250px) {
-  .sidebar {
+  .sidebar,
+  article {
     width: auto;
+  }
+
+  article {
+    min-height: 100%;
   }
 
   main {
@@ -396,6 +668,12 @@ main {
     gap: 25px;
   }
 
+  .main-content {
+    min-width: 75%;
+    width: 75%;
+    margin: 0;
+  }
+
   .sidebar {
     position: sticky;
     top: 60px;
@@ -404,6 +682,8 @@ main {
     margin-bottom: 0;
     padding-top: 60px;
     z-index: 1;
+    min-width: 25%;
+    width: 25%;
   }
 
   .sidebar-info {
