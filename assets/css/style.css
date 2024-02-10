@@ -74,6 +74,11 @@
   box-sizing: border-box;
 }
 
+::selection {
+  background: var(--green-malachite);
+  color: var(--black-raisin);
+}
+
 a {
   text-decoration: none;
 }
