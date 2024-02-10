@@ -23,3 +23,36 @@ window.addEventListener("resize", function () {
     }
   }
 });
+
+// Page Navigation
+
+const navigationLinks = document.querySelectorAll("[data-nav-link]");
+const pages = document.querySelectorAll("[data-page]");
+
+for (let i = 0; i < navigationLinks.length; i++) {
+  navigationLinks[i].addEventListener("click", function () {
+    for (let i = 0; i < pages.length; i++) {
+      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
+        pages[i].classList.add("active");
+        navigationLinks[i].classList.add("active");
+        window.scrollTo(0, 0);
+      } else {
+        pages[i].classList.remove("active");
+        navigationLinks[i].classList.remove("active");
+      }
+    }
+  });
+}
+
+// contact btn active disable
+
+const form = document.querySelector("[data-form]");
+const formBtn = document.querySelector("[data-form-btn]");
+
+form.addEventListener("input", function () {
+  if (form.checkValidity()) {
+    formBtn.removeAttribute("disabled");
+  } else {
+    formBtn.setAttribute("disabled", "");
+  }
+});
