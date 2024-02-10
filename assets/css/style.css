@@ -385,9 +385,28 @@ h3 {
 }
 
 .navbar-link.active {
-  color: var(--green-malachite);
+  color: var(--violet-electric);
 }
 
+/* Article Title */
+
+.article-title {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.article-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--violet-electric);
+  border-radius: 3px;
+}
+
+/* Contact Form */
 .contact-form {
   margin-bottom: 10px;
 }
