@@ -58,7 +58,7 @@
     hsl(235, 21%, 21%);
 
   /* Shadow */
-  --shadow-1: -4px 8px 10px hsla(235, 21%, 60%, 0.15);
+  --shadow-1: -3px 4px 10px hsla(235, 21%, 60%, 0.15);
   --shadow-2: -2px 2px 5px hsla(274, 100%, 50%, 0.25);
   --shadow-3: -2px -8px 10px hsla(235, 21%, 60%, 0.15);
 
@@ -167,7 +167,7 @@ article {
 
 main {
   margin: 15px 15px;
-  /* margin-bottom: 75px; */
+  margin-bottom: 75px;
   min-width: 259px;
 }
 
@@ -406,6 +406,83 @@ h3 {
   border-radius: 3px;
 }
 
+/* About */
+
+.about .article-title {
+  margin-bottom: 15px;
+}
+
+.about-text {
+  color: var(--gray-platinum);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.about-text p {
+  margin-top: 15px;
+  text-align: justify;
+}
+
+/* Services */
+.service {
+  margin: 20px 0px;
+}
+
+.service-title {
+  margin-bottom: 20px;
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.service-item {
+  position: relative;
+  background: var(--gradient-4);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-1);
+  z-index: 1;
+}
+
+.service-item::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--blue-space-cadet);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.service-icon-box {
+  margin-bottom: 10px;
+}
+
+.service-icon-box img {
+  margin: auto;
+  filter: brightness(0) saturate(100%) invert(27%) sepia(87%) saturate(7494%)
+    hue-rotate(272deg) brightness(96%) contrast(119%);
+}
+
+.service-content-box {
+  text-align: center;
+}
+
+.service-item-title {
+  margin-bottom: 7px;
+  color: var(--gray-platinum);
+}
+
+.service-item-text {
+  color: var(--gray-platinum);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
 /* Contact Form */
 .contact-form {
   margin-bottom: 10px;
@@ -609,6 +686,23 @@ textarea.form-input:-webkit-resizer {
   .form-btn ion-icon {
     font-size: 18px;
   }
+
+  .service-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 30px;
+  }
+
+  .service-icon-box {
+    margin-bottom: 0;
+    margin-top: 5px;
+  }
+
+  .service-content-box {
+    text-align: left;
+  }
 }
 
 @media (min-width: 768px) {
@@ -670,6 +764,11 @@ textarea.form-input:-webkit-resizer {
 
   .navbar-link {
     font-weight: 500;
+  }
+
+  .service-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 25px;
   }
 }
 
