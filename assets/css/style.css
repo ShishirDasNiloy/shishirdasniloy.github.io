@@ -323,24 +323,6 @@ main {
   color: var(--violet-electric);
 }
 
-/* Skill List styles */
-.skill-list {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 15px;
-  padding-bottom: 4px;
-  padding-left: 7px;
-}
-
-.skill-item {
-  color: var(--gray-platinum);
-  font-size: 14px;
-}
-
-.skill-item:hover {
-  color: var(--violet-electric);
-}
 
 /* Main contents */
 article {
@@ -833,9 +815,6 @@ textarea.form-input:-webkit-resizer {
   .form-btn {
     width: max-content;
     margin-left: auto;
-  }
-  .skill-item {
-    font-size: 18px;
   }
 }
 
