@@ -323,7 +323,6 @@ main {
   color: var(--violet-electric);
 }
 
-
 /* Main contents */
 article {
   display: none;
@@ -423,7 +422,6 @@ h3 {
 
 .about-text p {
   margin-top: 15px;
-  text-align: justify;
 }
 
 /* Services */
@@ -550,7 +548,6 @@ h3 {
   color: var(--gray-platinum);
   font-weight: 500;
   line-height: 1.6;
-  text-align: justify;
 }
 
 /* Contact Form */
